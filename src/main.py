@@ -14,7 +14,7 @@ bot = commands.Bot(
     intents = intents # Set up basic permissions
 )
 
-bot.author_id = 200057405814341632  # Change to your discord id
+bot.author_id = 0  # Change to your discord id
 
 #Flood global variables
 flood_active = False
@@ -110,5 +110,5 @@ async def on_message(message):
 
 
 
-token = "MTE2Njc4NDIyNDUxNTMzODI5MQ.GrNhsF.QvkmHWQKmEf1Lf6dZmas9YVrEfaPY5WXOvhhOQ"
+token = "YOUR TOKEN HERE"
 bot.run(token)  # Starts the bot
