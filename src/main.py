@@ -33,6 +33,10 @@ async def on_ready():  # When the bot is ready
     print("I'm in")
     print(bot.user)  # Prints the bot's username and identifier
 
+########## Commands ##########
+
+###### Step 1 ######
+
 @bot.command()
 async def pong(ctx):
     await ctx.send('pong')
@@ -45,6 +49,8 @@ async def name(ctx):
 async def d6(ctx):
     random_number = random.randint(1,6)
     await ctx.send(random_number)
+
+###### Step 2 ######
 
 @bot.command()
 async def admin(ctx, member: discord.Member):
@@ -61,6 +67,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
     await member.ban(reason=reason)
     await ctx.send(f'{member.mention} a été banni pour la raison : {reason}!')
 
+
 @bot.command()
 async def flood(ctx):
     global flood_active, flood_users, x, y
@@ -71,6 +78,8 @@ async def flood(ctx):
     else:
         flood_users = {member.id: [] for member in ctx.guild.members}
         await ctx.send("Spammez mes lapins.")
+
+###### Step 3 ######
 
 @bot.command()
 async def xkcd(ctx):
@@ -88,6 +97,7 @@ async def poll(ctx, question: str):
     await poll_message.add_reaction("👎")
 
     
+########## Events ##########
 
 @bot.event
 async def on_message(message):
